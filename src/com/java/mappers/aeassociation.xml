@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.java.dao.AEAssoDao">
+	
+ 	<resultMap type="com.java.entity.AEAssociation" id="AEAssoResult">
+ 		<id property="assoId" column="assoId"></id>
+ 		<result property="assoName" column="assoName"></result>
+ 		<result property="assoNotice" column="assoNotice"></result>
+ 		<result property="assoTime" column="assoTime"></result>
+ 		<result property="assoLeader" column="assoLeader"></result>
+ 		<result property="assoReason" column="assoReason"></result>
+ 		<result property="assoSynopsis" column="assoSynopsis"></result>
+ 		<result property="applyState" column="applyState"></result>
+ 		<result property="userName" column="userName"></result>
+ 	</resultMap>
+
+ 	
+ 	<select id="addApplication" parameterType="com.java.entity.AEAssociation" resultMap="AEAssoResult">
+ 		insert into AE_Association (assoId,assoName,assoNotice,assoTime,assoLeader,assoReason,assoSynopsis,applyState,userName) values(#{assoId},#{assoName},#{assoNotice},#{assoTime},#{assoLeader},#{assoReason},#{assoSynopsis},#{applyState},#{userName})
+ 	</select>
+ 	
+ 	<select id="checkEstablish" parameterType="com.java.entity.AEAssociation" resultMap="AEAssoResult">
+ 		select * from AE_Association where assoLeader=#{assoLeader}
+ 	</select>
+ 	
+ 	<select id="findByPage" parameterType="Map" resultMap="AEAssoResult">
+		select * from AE_Association where assoLeader=#{userid1}
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+
+	<select id="selectCount" resultType="int">
+		select count(*) from AE_Association where assoLeader=#{0}
+	</select>
+	
+	<select id="selectAllCount" resultType="int">
+		select count(*) from AE_Association where applyState='已通过'
+	</select>
+	
+	<select id="findAllByPage" parameterType="Map" resultMap="AEAssoResult">
+		select * from AE_Association where applyState='已通过'
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	
+	<select id="listDetailsById" resultMap="AEAssoResult">
+		select * from AE_Association where assoId=#{0}
+	</select>
+	
+	<select id="applyJoinAsso" parameterType="com.java.entity.StudentAndAsso">
+ 		insert into student_asso (assoId,assoLeader,userId,applyTime) values(#{assoId},#{assoLeader},#{userId},#{applyTime})
+ 	</select>
+	
+	<select id="selectJoinCount" resultType="int">
+		select count(*) from student_asso where userId=#{0}
+	</select>
+
+	<select id="findJoinById" resultMap="AEAssoResult">
+		select * from AE_Association where assoId=#{0}
+	</select>
+	
+	
+	<select id="selectAcceptCount" resultType="int">
+		select count(*) from student_asso where assoLeader=#{0}
+	</select>
+	
+	<select id="selectMyAssoCount" resultType="int">
+		select count(*) from student_asso where userId=#{0} And applyJoinState='已通过'
+	</select>
+	
+	<select id="selectMemberCount" resultType="int">
+		select count(*) from student_asso where assoId=#{0} And applyJoinState='已通过'
+	</select>
+	
+	<select id="checkAsso" parameterType="com.java.entity.AEAssociation" resultMap="AEAssoResult">
+ 		select * from AE_Association where assoId=#{0}
+ 	</select>
+ 	
+ 	<select id="revokeCreateAsso" parameterType="com.java.entity.AEAssociation">
+ 		update AE_Association set applyState='已撤销' where assoId=#{0}
+ 	</select>
+ 	
+ 	<select id="revokeJoinAsso" parameterType="com.java.entity.StudentAndAsso">
+ 		update student_asso set applyJoinState='已撤销' where applyId=#{0}
+ 	</select>
+	
+	<select id="updateNotice" parameterType="com.java.entity.AEAssociation">
+ 		update ae_association set assoNotice = #{arg1} where assoId=#{arg0}
+ 	</select>
+ 	
+ 	<select id="modifyViewsById" parameterType="Map">
+ 		update asso_views set ${selectImage1} = #{imageDate} where assoId=#{assoId1}
+ 	</select>
+ 	
+ 	<select id="modifyAeaLeader">
+ 		update ae_association set assoLeader=#{arg1} where assoId = #{arg0}
+ 	</select>
+</mapper>  

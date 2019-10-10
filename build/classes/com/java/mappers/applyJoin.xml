@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.java.dao.AEAssoDao">
+	
+ 	<resultMap type="com.java.entity.StudentAndAsso" id="saaResult">
+ 		<id property="assoId" column="assoId"></id>
+ 		<result property="applyId" column="applyId"></result>
+ 		<result property="assoLeader" column="assoLeader"></result>
+ 		<result property="userId" column="userId"></result>
+ 		<result property="applyJoinState" column="applyJoinState"></result>
+ 		<result property="assoPosition" column="assoPosition"></result>
+ 		<result property="applyTime" column="applyTime"></result>
+ 	</resultMap>
+
+	
+	<select id="findJoinByPage" parameterType="Map" resultMap="saaResult">
+		select * from student_asso where userId=#{userid2}
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	
+	<select id="checkIsApply"  resultMap="saaResult">
+		select * from student_asso where userId=#{arg0} and assoId=#{arg1}
+	</select>
+	
+	<select id="findAcceptByPage" parameterType="Map" resultMap="saaResult">
+		select * from student_asso where assoLeader=#{userid3}
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	
+	<select id="findMyAssoByPage" parameterType="Map" resultMap="saaResult">
+		select * from student_asso where userId=#{userid4} And applyJoinState='已通过'
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	
+	<select id="findAllUserByPage" parameterType="Map" resultMap="saaResult">
+		select * from student_asso where assoId=#{assoid} And applyJoinState='已通过'
+		<if test="start2!=null and size2!=null">
+			limit #{start2},#{size2}
+		</if>
+	</select>
+	
+	<select id="checkJoinId"  resultMap="saaResult">
+		select * from student_asso where applyId=#{0}
+	</select>
+	
+	<select id="checkJoinById"  resultMap="saaResult">
+		select * from student_asso where assoId=#{arg0} and userId=#{arg1}
+	</select>
+	
+	<select id="optionApply" parameterType="com.java.entity.StudentAndAsso">
+ 		update student_asso set applyJoinState=#{arg1} where applyId = #{arg0};
+ 	</select>
+ 	
+ 	<select id="deletememberById">
+ 		delete from student_asso where applyId = #{0}
+ 	</select>
+ 	
+ 	<select id="checkAssoLeaderById" resultType="int">
+		select count(*) from student_asso where assoLeader=#{arg0} and assoId=#{arg1}
+	</select>
+ 	
+ 	<select id="checkmemberById"  resultMap="saaResult">
+		select * from student_asso where applyId=#{0}
+	</select>
+	
+	<select id="modifyPositionById">
+ 		update student_asso set assoPosition=#{arg1} where applyId = #{arg0}
+ 	</select>
+ 	
+ 	<select id="modifySaaLeader">
+ 		update student_asso set assoLeader=#{arg1} where assoId = #{arg0}
+ 	</select>
+ 	
+ 	<select id="modifyLeaderPosition">
+ 		update student_asso set assoPosition='社员' where userId = #{arg0} and assoId = #{arg1}
+ 	</select>
+ 	
+</mapper>  

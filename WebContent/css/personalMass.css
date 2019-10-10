@@ -1,0 +1,314 @@
+
+		.loginName{
+			position: absolute;
+			display:none;
+		}
+		.context_top{
+			width: 80%;
+		    height: 50px;
+		    display: flex;
+		    align-items: center;
+		    position: absolute;
+		    top: 0;
+		    left: 20%;
+		    right: auto;
+		    bottom: auto;
+		    margin: auto;
+		    border-bottom:1px solid #ddd;
+		}
+		.context_top_link{
+			width:100%;
+		    position: absolute;
+		    top: 20px;
+		    left: 88%;
+		}
+		.context_top_link_login{
+			width:100%;
+		    position: absolute;
+		    top: 0px;
+		    left: 0;
+		}
+		.context_top_link_logout{
+			width:100%;
+		    position: absolute;
+		    top: 9999px;
+		    left: 0;
+		}
+		.context_top_link_registe{
+			width:100%;
+		    position: absolute;
+		    top: 0;
+		    left: 60px;
+		}
+		
+		.context_mid{
+			width: 100%;
+		    height: 90%;
+		    display: flex;
+		    align-items: center;
+		    position: absolute;
+		    top: 50px;
+		    left: 20%;
+		    right: auto;
+		    bottom: auto;
+		    margin: auto;
+		    margin-left:20px;
+		    border-left:1px solid #ddd;
+		}
+
+		.context_mid_personalMass{
+			width: 100%;
+		    height: 100%;
+		    flex-flow: column;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    margin: auto;
+		}
+		.context_mid_personalMass_date{
+			width: 450px;
+		    height: 70%;
+			position: absolute;
+			top: 10%;
+		    left: 10%;
+		    background-color:#3c5471;
+
+		}
+		.context_mid_personalMass_portrait{
+			width:400px;
+			height:200px;
+			position:absolute;
+			top:10%;
+			left:35%;		
+		}
+		#context_mid_personalMass_input{
+			padding: 8px;
+		    display: block;
+		    border: none;
+		    border-bottom: 1px solid #808080;
+		    width: 100%;
+		    border: 1px solid;
+		    margin-bottom:20px;
+		}
+		.context_mid_personalMass_modifyMass{
+			width: 100%;
+		    height: 100%;
+		    justify-content: center;
+		    flex-flow: column;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    right:0;
+		    bottom:0;
+		    display:none;
+		    margin: auto;
+		    background-color:#00000094;
+		}
+		.context_mid_personalMass_modifyMass_outside{
+			position: absolute;
+			width:450px;
+			height: 800px;
+		    left: 20%;
+		    bottom: 7%;
+		    background-color:#96a7bf;
+		    border-radius:20px;
+		}
+		.tip{
+			width: 450px;
+		    height: 400px;
+		    position: absolute;
+		    left: 400px;
+		    top:100px;
+
+		}
+		.tip p{
+			margin-bottom:53px;
+			margin-top:5px;
+		}
+		#userUNameTip{
+			position: absolute;
+		    left: 0;
+		    top:78px;
+			color: red;
+		    font-size: 19px;
+		    font-weight: bold;
+		    font-family: cursive;
+		    opacity: 0.9;
+		}
+		#userPassTip{
+			position: absolute;
+		    left: 0;
+		    top:155px;
+			color: red;
+		    font-size: 19px;
+		    font-weight: bold;
+		    font-family: cursive;
+		    opacity: 0.9;
+		}
+		#userNameTip{
+			position: absolute;
+		    left: 0;
+		    top:230px;
+			color: red;
+		    font-size: 19px;
+		    font-weight: bold;
+		    font-family: cursive;
+		    opacity: 0.9;
+		}
+		#userIphoneTip{
+			position: absolute;
+		    left: 0;
+		    top:310px;
+			color: red;
+		    font-size: 19px;
+		    font-weight: bold;
+		    font-family: cursive;
+		    opacity: 0.9;
+		}
+		.context_mid_personalMass_modifyMass_form {
+			position: absolute;
+		    width: 350px;
+		    height: 700px;
+		    left: 10%;
+		   top: 10%;
+		}
+		.context_mid_personalMass_modifyMass_title{
+			position: absolute;
+		    width: 450px;
+		    height: 8%;
+		    left: 0;
+		    bottom: 92%;
+		    text-align:center;
+		    border-bottom:2px solid #adadad;
+		}
+
+		.context_mid_personalMass_modifyMass_input{
+			padding: 8px;
+		    display: block;
+		    border: none;
+		    width: 100%;
+		    border: 1px solid;
+		    margin-bottom:20px;
+		}
+		#context_mid_personalMass_modifyMass_showPass{
+			width: 100px;
+		    height: 30px;
+		    font-size: 10px;
+		    justify-content: center;
+		    align-items: center;
+		    flex-flow: column;
+		    color:#FFFFFF;
+		    position: absolute;
+		    display:block;
+		    top: 178px;
+		    left: 290px;
+		    margin: auto;
+		}
+		#context_mid_personalMass_modifyMass_hidePass{
+			width: 100px;
+		    height: 30px;
+		    color:#FFFFFF;
+		    justify-content: center;
+		    align-items: center;
+		    flex-flow: column;
+		    position: absolute;
+		    font-size: 10px;
+		    display:none;
+		    top: 178px;
+		    left: 290px;
+		    margin: auto;
+		}
+		#context_mid_personalMass_showPass{
+			width: 50px;
+		    height: 30px;
+		    font-size: 10px;
+		    justify-content: center;
+		    align-items: center;
+		    flex-flow: column;
+		    color:#FFFFFF;
+		    position: absolute;
+		    display:block;
+		    top: 176px;
+		    left: 390px;
+		    margin: auto;
+		}
+		#context_mid_personalMass_hidePass{
+			width: 50px;
+		    height: 30px;
+		    color:#FFFFFF;
+		    justify-content: center;
+		    align-items: center;
+		    flex-flow: column;
+		    position: absolute;
+		    font-size: 10px;
+		    display:none;
+		    top: 176px;
+		    left: 390px;
+		    margin: auto;
+		}
+		.context_left{
+			width: 20%;
+		    height: 95%;
+		    display: flex;
+		    align-items: center;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    right: auto;
+		    bottom: auto;
+		    margin: auto;
+		    margin-right:20px;
+		    border-right:1px solid #ddd;
+		}
+		.context_left_portrait{
+			position: absolute;
+			width: 100%;
+		    height: 22%;
+		    top:0;
+		    background-color:#0000005c;
+		}
+		#context_left_portrait_image{
+			width: 27%;
+   		 	height: 50%;
+		    left: 10%;
+		    top: 20%;
+		    border-radius: 50px;
+		    position: absolute;
+		}
+		#context_left_portrait_login{
+			width: 27%;
+   		 	height: 50%;
+		    left: 10%;
+		    top: 20%;
+		    border-radius: 50px;
+		    position: absolute;
+		}
+		.context_left_functionBtn{
+			width:100%;
+			height:78%;
+			position:absolute;
+			top:22%;
+			left:0;
+			background-color:#0000005c;
+		}
+		.context_left_userName{
+			font-size:28px;
+			color:#33FFFF;
+			position:absolute;
+			left:40%;
+			top:38%;
+		}
+		
+		.context_bottom{
+			width: 100%;
+		    height: 50px;
+		    display: flex;
+		    align-items: center;
+		    position: absolute;
+		    top: 95%;
+		    left: 0;
+		    right: auto;
+		    bottom: auto;
+		    margin: auto;
+		    border-top:1px solid #ddd;
+		}

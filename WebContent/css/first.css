@@ -1,0 +1,161 @@
+.loginName{
+			position: absolute;
+			display:none;
+		}
+		.context_top{
+			width: 80%;
+		    height: 50px;
+		    display: flex;
+		    align-items: center;
+		    position: absolute;
+		    top: 0;
+		    left: 20%;
+		    right: auto;
+		    bottom: auto;
+		    margin: auto;
+		    border-bottom:1px solid #ddd;
+		}
+		.context_top_link{
+			width:100%;
+		    position: absolute;
+		    top: 20px;
+		    left: 88%;
+		}
+		.context_top_link_login{
+			width:100%;
+		    position: absolute;
+		    top: 0px;
+		    left: 0;
+		}
+		.context_top_link_logout{
+			width:100%;
+		    position: absolute;
+		    top: 9999px;
+		    left: 0;
+		}
+		.context_top_link_registe{
+			width:100%;
+		    position: absolute;
+		    top: 0;
+		    left: 60px;
+		}
+		
+		.context_mid{
+			width: 1500px;
+		    height: 850px;
+		    display: flex;
+		    align-items: center;
+		    position: absolute;
+		    top: 50px;
+		    left: 20%;
+		    right: auto;
+		    bottom: auto;
+		    margin: auto;
+		    margin-left:20px;
+		    border-left:1px solid #ddd;
+		}
+		.context_mid_first{
+			width: 1500px;
+		    height: 850px;
+		    flex-flow: column;
+		    position: absolute;
+		    top: 70px;
+		    left: 160px;
+		    overflow:hidden;
+		    display:block;
+		    margin: auto;
+		}
+		.context_mid_first_AllAssociation{
+			width: 1300px;
+		    height: 780px;
+		}
+		.context_mid_first_AllAssociation_every{
+			float:left;
+			width:200px;
+			height:240px;
+			overflow:hidden;
+			text-overflow:ellipsis;
+			margin-right: 40px;
+			text-align:center;
+		}
+		.context_mid_first_Allsociation_url{
+			width:100%;
+			height:120px;
+		}
+		.context_mid_first_Allsociation_url:hover {
+			background-color: #5d9bb366;
+		}
+		.context_mid_first_page{
+			position:absolute;
+			width:400px;
+			height:30px;
+			left:400px;
+			top:720px;
+		}
+
+		.context_left{
+			width: 20%;
+		    height: 95%;
+		    display: flex;
+		    align-items: center;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    right: auto;
+		    bottom: auto;
+		    margin: auto;
+		    margin-right:20px;
+		    border-right:1px solid #ddd;
+		}
+		.context_left_portrait{
+			position: absolute;
+			width: 100%;
+		    height: 22%;
+		    top:0;
+		    background-color:#0000005c;
+		}
+		#context_left_portrait_image{
+			width: 27%;
+   		 	height: 50%;
+		    left: 10%;
+		    top: 20%;
+		    border-radius: 50px;
+		    position: absolute;
+		}
+		#context_left_portrait_login{
+			width: 27%;
+   		 	height: 50%;
+		    left: 10%;
+		    top: 20%;
+		    border-radius: 50px;
+		    position: absolute;
+		}
+		.context_left_functionBtn{
+			width:100%;
+			height:78%;
+			position:absolute;
+			top:22%;
+			left:0;
+			background-color:#0000005c;
+		}
+		.context_left_userName{
+			font-size:28px;
+			color:#33FFFF;
+			position:absolute;
+			left:40%;
+			top:38%;
+		}
+		
+		.context_bottom{
+			width: 100%;
+		    height: 50px;
+		    display: flex;
+		    align-items: center;
+		    position: absolute;
+		    top: 95%;
+		    left: 0;
+		    right: auto;
+		    bottom: auto;
+		    margin: auto;
+		    border-top:1px solid #ddd;
+		}

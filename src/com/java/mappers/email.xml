@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.java.dao.MyEmailDao">
+	
+ 	<resultMap type="com.java.entity.MyEmail" id="EmailResult">
+ 		<id property="emailId" column="emailId"></id>
+ 		<result property="emailId" column="emailId"></result>
+ 		<result property="acceptUserId" column="acceptUserId"></result>
+ 		<result property="sendUserId" column="sendUserId"></result>
+ 		<result property="sendUserName" column="sendUserName"></result>
+ 		<result property="emailTheam" column="emailTheam"></result>
+ 		<result property="emailContext" column="emailContext"></result>
+ 		<result property="acceptTime" column="acceptTime"></result>
+ 		<result property="emailState" column="emailState"></result>
+ 	</resultMap>
+ 	
+ 	<select id="selectEmailCount" resultType="int">
+		select count(*) from email where acceptUserId=#{0}
+	</select>
+	
+	<select id="findEmailByPage" parameterType="Map" resultMap="EmailResult">
+		select * from email where acceptUserId=#{userid1}
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	
+	<select id="sendEmail" parameterType="com.java.entity.MyEmail">
+ 		insert into email (acceptUserId,sendUserId,sendUserName,emailTheam,emailContext,acceptTime,emailState) values(#{acceptUserId},#{sendUserId},#{sendUserName},#{emailTheam},#{emailContext},#{acceptTime},#{emailState})
+ 	</select>
+ 	
+ 	<select id="selectSendEmailCount" resultType="int">
+		select count(*) from email where sendUserId=#{0}
+	</select>
+	
+	<select id="findSendEmailByPage" parameterType="Map" resultMap="EmailResult">
+		select * from email where sendUserId=#{userid2}
+		<if test="start2!=null and size2!=null">
+			limit #{start2},#{size2}
+		</if>
+	</select>
+	
+	<select id="checkEmail" parameterType="com.java.entity.MyEmail" resultMap="EmailResult">
+		select * from email where emailId=#{0}
+	</select>
+	
+	<select id="deleteEmail" parameterType="com.java.entity.MyEmail">
+		delete from email where emailId=#{0}
+	</select>
+ 	
+</mapper>  
